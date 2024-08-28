@@ -1,6 +1,49 @@
-<div>
+<!-- <div>
 <a class="h3 d-block"  routerLink="/login" routerLinkActive="router-link-active">Login</a>
 <a class="h3 d-block"  routerLink="/register">Register</a>
 <button class="btn btn-primary">LogOut</button>
 </div>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<html>
+<body>
+
+<div class="container" id="container">
+<div class="form-container sign-up">
+<form #signUpForm="ngForm">
+<h1>Create Account</h1>
+<div class="social-icons">
+<a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+<a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+<a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+</div>
+<span>or use your email for registeration</span>
+<input type="text" [(ngModel)]="userSignUp.firstName" id="firstName"  name="firstName" #firstName="ngModel" required placeholder="First Name">
+<input type="text" placeholder="Last Name" [(ngModel)]="userSignUp.lastName" id="lastName" name="lastName" #lastName="ngModel" required>
+<input type="email" placeholder="Email" [(ngModel)]="userSignUp.email" id="email"  name="email"  #email="ngModel">
+<input type="password" placeholder="Password" [(ngModel)]="userSignUp.password" id="password"  name="password" #password="ngModel">
+<input type="radio" placeholder="UserType" [(ngModel)]="userSignUp.userType" name="userType" #userType="ngModel" required>
+<button (click)="sendEmailVerificationCode()">Sign Up</button>
+</form>
+</div>
+<div class="toggle-container">
+<div class="toggle">
+<div class="toggle-panel toggle-left">
+<h1>Welcome Back!</h1>
+<p>Enter your personal details to use all of site features</p>
+<button class="hidden" id="login">Sign In</button>
+</div>
+<div class="toggle-panel toggle-right">
+<h1>Hello, Friend!</h1>
+<p>Register with your personal details to use all of site features</p>
+<button class="hidden" id="register">Sign Up</button>
+</div>
+</div>
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+
+</html>

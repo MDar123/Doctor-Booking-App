@@ -36,7 +36,6 @@ onRegister(){
       alert(JSON.stringify(error))
       })
   )
-
 }
 
 //  ---end---

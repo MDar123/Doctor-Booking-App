@@ -1,6 +1,6 @@
 import { Component,OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import {Observable,Subscription} from 'rxjs'
 import { Patients, Login, ApiResponse, RegisterHospital } from './DTO\'s/model';
@@ -18,7 +18,13 @@ title = 'Doctor Appointment App';
 public loginObj:Login = new Login();
 private subscription : Subscription[] = [];
 hospitaldetails: RegisterHospital = new RegisterHospital();
-constructor(private service : HospitalService){} 
+
+constructor(private service : HospitalService,private route : Router){
+const localdata = localStorage.getItem('HospitalData');
+if(localdata != null){
+this.hospitaldetails = JSON.parse(localdata);
+}
+} 
 ngOnInit(){
 }
 // Making method to close login modal
@@ -35,15 +41,13 @@ ngOnInit(){
 //  ---start---
 
 Onlogin(value:Login){
-  console.log(value.password)
-debugger
 if(!(value.password == undefined && value.userName == undefined)){
   this.subscription.push(
     this.service.LoginHospital(this.loginObj).subscribe((res:ApiResponse)=>{
     if(res.result){
-    alert('Logged In Successfully');
-    this.hospitaldetails = res.data
+    this.hospitaldetails = res.data;
     localStorage.setItem('HospitalData',JSON.stringify(res.data));
+    this.route.navigateByUrl('appointment');
     }else{
     alert(res.message)
     }
@@ -64,7 +68,9 @@ alert('Please Enter the Credentials')
 //  ---start---
 
 onLogout(){
-localStorage.clear();
+localStorage.removeItem('HospitalData');
+this.hospitaldetails = new RegisterHospital();
+this.route.navigateByUrl('home');
 }
 
 //  ---end---

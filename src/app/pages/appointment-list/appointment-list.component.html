@@ -1,1 +1,97 @@
-<p>appointment-list works!</p>
+
+<div class="row">
+<div class="col-8 m-0 p-0">
+<div class="alert alert-dark  m-0" role="alert">
+<h5>Appointments</h5> 
+</div>
+<div class="row">
+@for (item of appointmentList ; track $index){
+<div class="col-3 m-3 ">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title"> <strong>Appointment Booked By : </strong> {{item.name}} </h5>
+<h6 class="card-subtitle mb-2 text-muted"> <strong>Contact No :</strong> {{item.mobileNo}}</h6>
+<p  class=""> <strong>Appointment Time :</strong> {{item.appointmentTime}} </p>
+<p  class=""> <strong>Appointment Date</strong> {{item.appointmentDate | date}}</p>
+<p  class=""> <strong>AppointmentID : </strong> {{item.appointmentId}}</p>
+<p  class="" *ngIf="loggedData.userName == 'admin@gmail.com'">{{item.hospitalName}} </p>
+</div>
+</div>
+</div>
+}
+</div>
+
+</div>
+<div class="col-4">
+<div class="container-fluid">
+<h2>New Appointment</h2>
+<form id="appointmentForm" #appointmentForm="ngForm">
+<div class="row">
+<div class="col-6">
+<div class="mb-3">
+<label for="name" class="form-label">Name</label>
+<input [(ngModel)]="appointmentObj.name" type="text" class="form-control" id="name" name="name" required>
+</div>
+</div>
+<div class="col-6">
+<div class="mb-3">
+<label for="mobileNo" class="form-label">Mobile Number</label>
+<input [(ngModel)]="appointmentObj.mobileNo" type="text" class="form-control" id="mobileNo" name="mobileNo" required>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div class="mb-3">
+<label for="city" class="form-label">City</label>
+<input [(ngModel)]="appointmentObj.city" type="text" class="form-control" id="city" name="city" required>
+</div>
+</div>
+<div class="col-6">
+<div class="mb-3">
+<label for="age" class="form-label">Age</label>
+<input [(ngModel)]="appointmentObj.age" type="number" class="form-control" id="age" name="age" required>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div class="mb-3">
+<label for="appointmentDate" class="form-label">Appointment Date</label>
+<input [(ngModel)]="appointmentObj.appointmentDate" type="date" class="form-control" id="appointmentDate" name="appointmentDate"
+required>
+</div>
+</div>
+<div class="col-6">
+<div class="mb-3">
+<label for="appointmentTime" class="form-label">Appointment Time</label>
+<input [(ngModel)]="appointmentObj.appointmentTime" type="time" class="form-control" id="appointmentTime" name="appointmentTime"
+required>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div class="mb-3 form-check">
+<input [(ngModel)]="appointmentObj.isFirstVisit" type="checkbox" class="form-check-input" id="isFirstVisit" name="isFirstVisit">
+<label class="form-check-label" for="isFirstVisit">First Visit</label>
+</div>
+</div>
+<div class="col-6">
+<div class="mb-3 d-flex flex-row align-items-center">
+<input [(ngModel)]="appointmentObj.gender" class="mx-2" type="radio" name="gender" value="Male"><strong>Male</strong>
+<input [(ngModel)]="appointmentObj.gender" class="mx-2" type="radio" name="gender" value="FeMale"><strong>FeMale</strong>
+</div>
+</div>
+</div>
+
+<div class="mb-3">
+<label for="naration" class="form-label">Naration</label>
+<textarea [(ngModel)]="appointmentObj.naration" class="form-control" id="naration" name="naration" rows="3"></textarea>
+</div>
+
+<button type="submit" class="btn btn-primary" (click)="OnBookAppointment(appointmentForm.value)">Book Appointment</button>
+</form>
+</div>
+</div>
+</div>

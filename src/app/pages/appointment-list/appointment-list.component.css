@@ -1,0 +1,145 @@
+.col-8 {
+    padding: 1rem; /* Add padding around the card grid */
+}
+
+/* Style for each card */
+.card {
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 0.5rem; /* Rounded corners for the card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
+    overflow: hidden; /* Ensure rounded corners don't cause overflow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* Card body styling */
+.card-body {
+    padding: 1.25rem; /* Padding inside the card body */
+    background-color: #ffffff; /* White background for the card body */
+}
+
+/* Card title styling */
+.card-title {
+    font-size: 1.25rem; /* Slightly larger font size for the title */
+    font-weight: 600; /* Bold font weight for the title */
+    color: #343a40; /* Dark color for better readability */
+    margin-bottom: 0.5rem; /* Spacing below the title */
+}
+
+/* Card subtitle styling */
+.card-subtitle {
+    font-size: 1rem; /* Medium font size for the subtitle */
+    color: #6c757d; /* Muted color for the subtitle */
+    margin-bottom: 0.5rem; /* Spacing below the subtitle */
+}
+
+/* Card text styling */
+.card-body p {
+    font-size: 0.9rem; /* Slightly smaller font size for the text */
+    color: #495057; /* Darker color for the text */
+    margin-bottom: 0.5rem; /* Spacing below each paragraph */
+}
+
+/* Spacing for card columns */
+.col-3 {
+    margin-bottom: 1rem; /* Add bottom margin to card columns */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-3 {
+        flex: 0 0 100%; /* Full width on smaller screens */
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Apply a background color to the form container for a cleaner look */
+.container-fluid {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 2rem; /* Add padding around the form */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Style the form heading */
+.container-fluid h2 {
+    color: #343a40; /* Darker text color for the heading */
+    margin-bottom: 1.5rem; /* Spacing below the heading */
+    text-align: center; /* Center-align the heading text */
+}
+
+/* Style the form labels */
+.form-label {
+    font-weight: 500; /* Medium weight for better readability */
+    color: #495057; /* Slightly lighter text color for labels */
+}
+
+/* Enhance form control elements */
+.form-control {
+    border-radius: 0.375rem; /* Rounded corners for input fields */
+    border-color: #ced4da; /* Lighter border color */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle inner shadow for inputs */
+    padding: 0.75rem 1.25rem; /* Padding inside input fields */
+}
+
+/* Style the checkbox and radio button containers */
+.form-check {
+    margin-bottom: 1rem; /* Spacing below the checkbox/radio button */
+}
+
+.form-check-input {
+    margin-right: 0.5rem; /* Spacing between checkbox/radio and label */
+}
+
+.form-check-label {
+    font-weight: 400; /* Normal weight for better readability */
+}
+
+/* Style the radio button labels */
+.d-flex input[type="radio"] {
+    margin-right: 0.5rem; /* Spacing between radio buttons */
+}
+
+.d-flex strong {
+    margin-right: 1rem; /* Spacing between radio buttons and text */
+    color: #495057; /* Consistent color with labels */
+}
+
+/* Style the textarea */
+.form-control[rows="3"] {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Style the submit button */
+.btn-primary {
+    background-color: #007bff; /* Consistent blue color for the button */
+    border-color: #007bff; /* Button border color */
+    padding: 0.75rem 1.5rem; /* Padding inside the button */
+    border-radius: 0.375rem; /* Rounded corners for the button */
+    font-weight: 500; /* Medium weight for better readability */
+}
+
+/* Add a hover effect to the button */
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #004085; /* Darker border on hover */
+}

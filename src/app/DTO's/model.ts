@@ -31,3 +31,38 @@ export class Login {
 userName!: string
 password!: string
 }
+export class NewAppointment{
+name!: string
+mobileNo!: string
+city!: string
+age!: number
+gender!: string
+appointmentDate:Date =  new Date()
+appointmentTime!: string
+isFirstVisit!: boolean
+naration!: string
+hospitalId!: number
+}
+
+export class GetAppointmentById{
+appointmentDate: Date = new Date()
+appointmentId!: number
+appointmentTime!: string
+isFirstVisit!: boolean
+naration!: string
+name!: string
+patientId!: number
+mobileNo!: string
+isDone!: boolean
+hospitalName!:string
+}
+
+export class PatientDetails{
+    patientId!: number
+    name!: string
+    mobileNo!: string
+    city!: string
+    age!: number
+    gender!: string
+    hospitalId!: number
+}

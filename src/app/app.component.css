@@ -1,0 +1,58 @@
+/* Navbar Styling */
+.navbar {
+    padding: 0.5rem 1rem; /* Add padding around the navbar */
+}
+
+.navbar-brand {
+    font-weight: 600; /* Bold font for the brand */
+    font-size: 1.25rem; /* Slightly larger font size for the brand */
+}
+
+.navbar-nav .nav-link {
+    color: #f8f9fa; /* Light color for text */
+    font-weight: 500; /* Medium weight for better readability */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e9ecef; /* Slightly lighter color on hover */
+}
+
+.navbar-toggler {
+    border: none; /* Remove border */
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu" viewBox="0 0 24 24"%3E%3Cpath d="M4 6h16M4 12h16M4 18h16"%3E%3C/path%3E%3C/svg%3E'); /* Custom icon */
+}
+
+.form-control {
+    border-radius: 0.25rem; /* Rounded corners for input fields */
+    padding: 0.5rem; /* Padding inside the input field */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border-color: #007bff; /* Border color */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker color on hover */
+    border-color: #004085; /* Darker border on hover */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Danger button color */
+    border-color: #dc3545; /* Border color */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker color on hover */
+    border-color: #bd2130; /* Darker border on hover */
+}
+
+h4.text-white {
+    margin-bottom: 0; /* Remove bottom margin for better alignment */
+}
